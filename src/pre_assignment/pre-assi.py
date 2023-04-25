@@ -1,19 +1,6 @@
-#%%
 import numpy as np
-import pandas as pd
 import matplotlib.pyplot as plt
-
-def load_auto():
-
-	# import data
-	Auto = pd.read_csv('Auto.csv', na_values='?', dtype={'ID': str}).dropna().reset_index()
-	Auto.columns
-	# Extract relevant input and output for traning
-	X_train = Auto.drop(columns='mpg')
-	Y_train = Auto[['mpg']]
-
-	return X_train, Y_train
-
+from load_data import load_auto
 
 def normalize(X):
 
@@ -22,7 +9,6 @@ def normalize(X):
         X[column] = (X[column] - X[column].mean()) / np.sqrt(np.mean((X[column] - X[column].mean())**2))
             
     return X
-
 
 class LinearRegressionGD:
     """Linear Regression Using Gradient Descent.
@@ -96,7 +82,7 @@ class LinearRegressionGD:
         return np.dot(x, self.w_) + self.b_
     
 def main():
-    X_train, Y_train= load_auto()
+    X_train, Y_train= load_auto('../../datasets/Auto.csv')
     
     # LR model 1
     X = X_train[['horsepower']]
