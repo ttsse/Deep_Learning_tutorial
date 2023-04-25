@@ -1,4 +1,3 @@
-#%%
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -6,7 +5,7 @@ import matplotlib.pyplot as plt
 def load_auto():
 
 	# import data
-	Auto = pd.read_csv('Auto.csv', na_values='?', dtype={'ID': str}).dropna().reset_index()
+	Auto = pd.read_csv('../../datasets/Auto.csv', na_values='?', dtype={'ID': str}).dropna().reset_index()
 	Auto.columns
 	# Extract relevant input and output for traning
 	X_train = Auto.drop(columns='mpg')
