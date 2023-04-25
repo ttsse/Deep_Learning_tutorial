@@ -123,8 +123,8 @@ def main():
     plt.xlabel('iteration')
     plt.ylabel('Cost(J)')
     plt.savefig("cost1.png")
+    
     # LR model 2
-
     X = X_train.drop(columns='name')
     Y = Y_train.values
 
