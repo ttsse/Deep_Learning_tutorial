@@ -11,3 +11,9 @@ A repo for the assignments of course Deep Learning at Uppsala University
         * cost1.png
         * cost2.png
         * prediction.png
+2. assignment 1
+    Dataset: datasets/MNIST.zip
+    Packages needed: numpy matplotlib imageio glob
+    How to run the code for softmax regression model:
+        1) cd assignment_1
+        2) python softmax_regression.py
