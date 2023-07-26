@@ -7,6 +7,7 @@ A repo for the assignments of course Deep Learning at Uppsala University
     How to run the code:
         1) cd pre-assignment
         2) python main.py
+        docker run -v  $(pwd)/results:/app/src/linear_regression/results -v $(pwd)/../../datasets:/app/datasets -t linear-regression:latest
     Files generated: 
         * cost1.png
         * cost2.png
