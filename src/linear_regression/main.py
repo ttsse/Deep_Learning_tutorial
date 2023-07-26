@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 from load_data import load_auto
@@ -94,6 +95,9 @@ def main():
     LR1.fit(X, Y)
     y_pred = LR1.predict(X)
 
+    if not os.path.exists('./results'):
+        os.makedirs('./results')
+
     plt.figure()
     plt.plot(X_train[['horsepower']], Y, 'r.', label="y_true")
     plt.plot(X_train[['horsepower']], y_pred, 'g-', label="y_pred")
@@ -101,14 +105,14 @@ def main():
     plt.xlabel('horsepower')
     plt.ylabel('mpg')
     plt.title('true mpg vs. predicted mpg')
-    plt.savefig("prediction.png")
+    plt.savefig("./results/prediction.png")
 
     print(f"The final cost value is {LR1.cost_[-1]}")
     plt.figure()
     plt.plot(LR1.cost_, 'r.')
     plt.xlabel('iteration')
     plt.ylabel('Cost(J)')
-    plt.savefig("cost1.png")
+    plt.savefig("./results/cost1.png")
     
     # LR model 2
     X = X_train.drop(columns='name')
@@ -124,7 +128,7 @@ def main():
     plt.plot(LR2.cost_, 'b.')
     plt.xlabel('iteration')
     plt.ylabel('Cost(J)')
-    plt.savefig("cost2.png")
+    plt.savefig("./results/cost2.png")
 
 if __name__ == '__main__':
      main()
