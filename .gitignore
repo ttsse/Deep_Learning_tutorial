@@ -162,3 +162,7 @@ cython_debug/
 # generated png files
 *.png
 MNIST
+WARWICK
+
+
+results/
