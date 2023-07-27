@@ -5,7 +5,7 @@ import numpy as np
 
 def load_mnist():
 
-    if os.path.exists("MNIST") == False:
+    if not os.path.exists("MNIST"):
         print("Extracting MNIST.zip")
         os.system("unzip ../../datasets/MNIST.zip -d .")
         print("Done")

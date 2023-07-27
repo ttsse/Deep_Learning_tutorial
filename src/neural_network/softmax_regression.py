@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from load_mnist import load_mnist
 import time
+import os
 
 class SoftmaxRegression(object):
     def __init__(self, eta=0.05, epochs=1000,
@@ -160,6 +161,9 @@ def main():
     end_time = time.time()
     print(f'Training Time: {end_time - start_time:.2f} sec')
 
+    if not os.path.exists('./results'):
+        os.makedirs('./results')
+
     fig = plt.figure()
     plt.plot(range(1, len(sr.cost_train_) + 1), sr.cost_train_, label='Training set')
 
@@ -169,8 +173,7 @@ def main():
     plt.ylabel('Loss')
     plt.legend(loc='upper right')
     plt.grid()
-    plt.show()
-    fig.savefig('losses_softmax.png')
+    fig.savefig('./results/losses_softmax.png')
 
     fig = plt.figure()
     plt.plot(range(1, len(sr.acc_train_) + 1), sr.acc_train_, label='Training set')
@@ -181,8 +184,7 @@ def main():
     plt.ylim(0, 100)
     plt.legend(loc='lower right')
     plt.grid()
-    plt.show()
-    fig.savefig('accuracy_softmax.png')
+    fig.savefig('./results/accuracy_softmax.png')
 
     fig = plt.figure(figsize=(15,5))
     for i in range(10):  
@@ -190,8 +192,7 @@ def main():
         ax.imshow(sr.w_[:,i].reshape(28,28), cmap=plt.get_cmap('gray'))
         ax.set_title('weights for the {i} class'.format(i=i))
         plt.axis('off')
-    plt.show()
-    fig.savefig('softmax_weights.png', bbox_inches='tight')
+    fig.savefig('./results/softmax_weights.png', bbox_inches='tight')
 
 if __name__ == '__main__':
     main()
