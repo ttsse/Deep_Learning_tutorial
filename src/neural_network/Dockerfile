@@ -2,8 +2,8 @@ FROM ubuntu:20.04
 
 RUN apt-get update && apt-get install -y python3 python3-pip
 
-WORKDIR /app/src/neural_network
+WORKDIR /app/neural_network
 COPY . .
 RUN pip3 install -r requirements.txt
-USER root
+
 CMD ["python3", "softmax_regression.py"]
