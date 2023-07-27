@@ -1,9 +1,7 @@
 matplotlib
 numpy
 imageio
-glob
 torch
 torchvision
 torchsummary
 torchmetrics
-subprocess
