@@ -83,7 +83,7 @@ class LinearRegressionGD:
         return np.dot(x, self.w_) + self.b_
     
 def main():
-    X_train, Y_train= load_auto('../../datasets/Auto.csv')
+    X_train, Y_train= load_auto('./Auto.csv')
     
     # LR model 1
     X = X_train[['horsepower']]
