@@ -6,4 +6,4 @@ WORKDIR /app/neural_network
 COPY . .
 RUN pip3 install -r requirements.txt
 
-CMD ["python3", "softmax_regression.py"]
+CMD ["bash", "run.sh"]
