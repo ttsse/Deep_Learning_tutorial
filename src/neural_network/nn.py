@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import time
+import os
 from load_mnist import load_mnist
 
 class NeuralNetwork:
@@ -204,7 +205,7 @@ def main():
     plt.ylabel('Loss')
     plt.legend(loc='upper right')
     plt.grid()
-    fig.savefig('./results/losses_nn_1_layer.png')
+    fig.savefig('./results/losses_nn.png')
 
     fig = plt.figure()
     plt.plot(range(len(nn.acc_train_)), nn.acc_train_, label='Training set')
@@ -214,7 +215,7 @@ def main():
     plt.ylabel('Accuracy(%)')
     plt.legend(loc='lower right')
     plt.grid()
-    fig.savefig('./results/accuracy_nn_1_layer.png')
+    fig.savefig('./results/accuracy_nn.png')
 
 if __name__ == '__main__':
     main()

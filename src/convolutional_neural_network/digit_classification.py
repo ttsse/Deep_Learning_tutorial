@@ -86,7 +86,7 @@ def plot_fig(losses_train, losses_test, acc_train, acc_test):
     plt.legend(loc='upper right')
     plt.grid()
     plt.show()
-    fig.savefig('./results/losses_softmax.png')
+    fig.savefig('./results/losses_cnn.png')
 
 
     fig = plt.figure()
@@ -99,7 +99,7 @@ def plot_fig(losses_train, losses_test, acc_train, acc_test):
     plt.legend(loc='lower right')
     plt.grid()
     plt.show()
-    fig.savefig('./results/accuracy_softmax.png')
+    fig.savefig('./results/accuracy_cnn.png')
 
 def main():
 
