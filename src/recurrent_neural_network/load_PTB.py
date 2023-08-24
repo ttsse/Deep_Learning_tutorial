@@ -1,4 +1,5 @@
 import numpy as np
+import os
 # Load data
 def load_data(path):
     with open(path, 'r') as f:
@@ -10,6 +11,12 @@ def load_data(path):
     
 
 def load_PTB():
+
+    if not os.path.exists("train.txt"):
+        print("Extracting PTB.zip")
+        os.system("unzip ../../datasets/PTB.zip -d .")
+        print("Done")
+
     paths = ['train.txt', 'valid.txt', 'test.txt']
     data = []
     for path in paths:
