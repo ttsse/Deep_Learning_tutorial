@@ -150,5 +150,12 @@ This repository contains tutorial codes for multiple machine learning task, e.g.
     ```
     * Files generated under results folder:
         * losses.png. Loss curve for the rnn model.
+
+## test
+* To run the test, run the following commands:
+    ```bash
+        $ cd test
+        $ pytest
+    ```
 ## License
 The repository is licensed under the Apache License, Version 2.0. (http://www.apache.org/licenses/LICENSE-2.0)
