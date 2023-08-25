@@ -151,7 +151,7 @@ This repository contains tutorial codes for multiple machine learning task, e.g.
     * Files generated under results folder:
         * losses.png. Loss curve for the rnn model.
 
-## test
+## Test
 * To run the test, run the following commands:
     ```bash
         $ cd test
